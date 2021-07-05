@@ -11,26 +11,26 @@ class Cli < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.0/outblocks-0.1.0-darwin_amd64.tar.gz"
-      sha256 "0d486fa1176e1b729bfd020fd332212adfaf2b32455061cdf9e22ae6a6b52ce4"
+      sha256 "c2b1b92aef5c6a7263bbec9f9eca80579aab384aaa151fb3df3654264c0fdb64"
     end
     if Hardware::CPU.arm?
       url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.0/outblocks-0.1.0-darwin_arm64.tar.gz"
-      sha256 "c0cc06d29d14b6bfbd5b2f1487613616de146e5fa4aa3d7021a5fc829941d9c8"
+      sha256 "5946ed7cb63c47334c4e0300d024173b24e26686a21800b01083b1c5a30bcd2e"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.0/outblocks-0.1.0-linux_amd64.tar.gz"
-      sha256 "15ade596a2cb5b25d4843b7ff515bdd050199feaf0cc35d1aaaad30c99f6dc4f"
+      sha256 "582ba37da415fa92ce3c10ab56ffc89e0a735c4e288c8b8941054a89a549c404"
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
       url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.0/outblocks-0.1.0-linux_armv6.tar.gz"
-      sha256 "ce16dccd7f75df8332e30b95f1280e68ae3293196cb015e8efc560e45e875363"
+      sha256 "e79ef424f1042aec47dc2f52918853a7292ac0791cff64999ce96b89c11e6fa3"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.0/outblocks-0.1.0-linux_arm64.tar.gz"
-      sha256 "bf812e26182980e1bf9b49dc7cefba1836d91c649dbe2260a6d26d3448af6aa2"
+      sha256 "f6e519795ea812c39f031854a0bfc6435887ec40d09359a7250d1f3a1ad44a36"
     end
   end
 
@@ -43,7 +43,7 @@ class Cli < Formula
     output = Utils.popen_read("#{bin}/ok completion zsh")
     (zsh_completion/"_ok").write output
     output = Utils.popen_read("#{bin}/ok completion fish")
-    (fish_completion/"eksctl.fish").write output
+    (fish_completion/"ok.fish").write output
     prefix.install_metafiles
   end
 
