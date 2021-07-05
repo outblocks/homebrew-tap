@@ -11,26 +11,26 @@ class Ok < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.0/outblocks-0.1.0-darwin_amd64.tar.gz"
-      sha256 "c2b1b92aef5c6a7263bbec9f9eca80579aab384aaa151fb3df3654264c0fdb64"
+      sha256 "c1115afa322fba2e007eddf9790956edb184d927bcd6456aad1b6cdc01a430b7"
     end
     if Hardware::CPU.arm?
       url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.0/outblocks-0.1.0-darwin_arm64.tar.gz"
-      sha256 "5946ed7cb63c47334c4e0300d024173b24e26686a21800b01083b1c5a30bcd2e"
+      sha256 "c7d1c63d8437766b307477e16c77401043a175714dd2cd9e8e7c56a650dc28b2"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.0/outblocks-0.1.0-linux_amd64.tar.gz"
-      sha256 "582ba37da415fa92ce3c10ab56ffc89e0a735c4e288c8b8941054a89a549c404"
+      sha256 "5a469adefb6c30bc5837e0f92469cf6937b75d7cedbdd444b9fcab434ebe7a2c"
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
       url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.0/outblocks-0.1.0-linux_armv6.tar.gz"
-      sha256 "e79ef424f1042aec47dc2f52918853a7292ac0791cff64999ce96b89c11e6fa3"
+      sha256 "6d372b4efeb86369452abb0df54f517c10edca6ce6b9d458a6a1aa4f6aa9922e"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.0/outblocks-0.1.0-linux_arm64.tar.gz"
-      sha256 "f6e519795ea812c39f031854a0bfc6435887ec40d09359a7250d1f3a1ad44a36"
+      sha256 "f13f0713c5785a1e35c63aca40ae17fa76387daa066df6828fcaa55d96c5ab3d"
     end
   end
 
