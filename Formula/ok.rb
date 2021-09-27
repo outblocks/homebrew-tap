@@ -5,33 +5,33 @@
 class Ok < Formula
   desc "Auto devops."
   homepage "https://outblocks.io"
-  version "0.1.21"
+  version "0.1.22"
   license "MIT"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.21/outblocks-0.1.21-darwin_amd64.tar.gz"
-      sha256 "7e89f181b46e12091edf1a5a9bacaa5b554b9bae31a0bc1f5f3e0ba599f889d2"
+      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.22/outblocks-0.1.22-darwin_amd64.tar.gz"
+      sha256 "5be393e9750a6f04077c10c040cdfe1c600fa6552831ca68ece5f696c175c119"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.21/outblocks-0.1.21-darwin_arm64.tar.gz"
-      sha256 "92f667607e37da7db537e27f0d9f327fcd9c93f8eb66994154d652038ebe65f3"
+      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.22/outblocks-0.1.22-darwin_arm64.tar.gz"
+      sha256 "8287e2a60c36e95ccd55b9b30353f1ab863a79ec0348fc7cea5a5acf9ba92177"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.21/outblocks-0.1.21-linux_amd64.tar.gz"
-      sha256 "6ebe155a090db6e4fe2d50a0d1863e153a8fd909ca7c04f1ba45f2c50a5a8dc8"
+      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.22/outblocks-0.1.22-linux_amd64.tar.gz"
+      sha256 "3e19d2ad199f834064774a740de4119c9e4ec70bfc108f07684781aa536e3914"
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.21/outblocks-0.1.21-linux_armv6.tar.gz"
-      sha256 "25d7512c58ca6feeed8fc5e8a5f5599e52575ab86dee0656d560ef11b5e95ad0"
+      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.22/outblocks-0.1.22-linux_armv6.tar.gz"
+      sha256 "ada74f5dea992837f480f19c73ecc0caf5e9ced5c1cca402874609a2ab6aae55"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.21/outblocks-0.1.21-linux_arm64.tar.gz"
-      sha256 "2b7de2181e7745cfe92ee804b712df874c536124cc0e80c2e81f7f8e3e98da72"
+      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.22/outblocks-0.1.22-linux_arm64.tar.gz"
+      sha256 "5e24344d747eaa5bdd1ce6e44ae0f531c275bb8f595878692cbfb325d5e6fa5d"
     end
   end
 
