@@ -5,33 +5,33 @@
 class Ok < Formula
   desc "Auto devops."
   homepage "https://outblocks.io"
-  version "0.1.25"
+  version "0.1.26"
   license "MIT"
   bottle :unneeded
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.25/outblocks-0.1.25-darwin_arm64.tar.gz"
-      sha256 "f8b43fc35f38fef9429fb3b7ae29a65299cbf915c1c22430815cbbabe29beb24"
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.25/outblocks-0.1.25-darwin_amd64.tar.gz"
-      sha256 "4281a880e4fa19460a5fbff5f42fe36c852e0736a17c7cb4dbe09fa9293a16ad"
+      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.26/outblocks-0.1.26-darwin_amd64.tar.gz"
+      sha256 "4635633403c603a61f9c77af5c13895b34dbdc167aa01d281370df9d5dd8b972"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.26/outblocks-0.1.26-darwin_arm64.tar.gz"
+      sha256 "56ea275637967bb692508ce58a5d627388a316f6976f14240818e07e7022ddee"
     end
   end
 
   on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.26/outblocks-0.1.26-linux_amd64.tar.gz"
+      sha256 "0cc67c7d41a09666151cb96306942ab2f3300bcf07111e886d9bc564171b5ab1"
+    end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.25/outblocks-0.1.25-linux_armv6.tar.gz"
-      sha256 "9b33f96e7f37b948b6e2e6c4331d93a5a453e7fdbc1bca292d049ffd321297c9"
+      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.26/outblocks-0.1.26-linux_armv6.tar.gz"
+      sha256 "16c6a6317424511368ca1a7fbcf65a74142be8c63f659dd7513f0457764cc098"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.25/outblocks-0.1.25-linux_arm64.tar.gz"
-      sha256 "937673caae10b3d157b4dc5daa8e902c82c6c724299ce49b512bfa738afb5267"
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.25/outblocks-0.1.25-linux_amd64.tar.gz"
-      sha256 "a90a4599c65b06a7b98cba39455dd0fa5474f3fe6209e2e405713d13c047c71e"
+      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.26/outblocks-0.1.26-linux_arm64.tar.gz"
+      sha256 "67637f9cfe393cc3f3de48a1675cc7c2704d29f5e181393d1ba423a2e88fae8a"
     end
   end
 
