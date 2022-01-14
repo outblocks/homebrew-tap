@@ -5,13 +5,13 @@
 class Ok < Formula
   desc "Auto devops."
   homepage "https://outblocks.io"
-  version "0.1.53"
+  version "0.1.54"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.53/outblocks-0.1.53-darwin_arm64.tar.gz"
-      sha256 "0e10d4aee4967f74663d8a6b9ebfa7fc77586ec50ca1a57ee97245506e622a45"
+    if Hardware::CPU.intel?
+      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.54/outblocks-0.1.54-darwin_amd64.tar.gz"
+      sha256 "0810489bb347f0f09ee43f78a687b8f5d623d045388b6c8be5721e8d459d512c"
 
       def install
         bin.install "ok"
@@ -24,9 +24,9 @@ class Ok < Formula
         prefix.install_metafiles
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.53/outblocks-0.1.53-darwin_amd64.tar.gz"
-      sha256 "3f6ef747e6632f4f18025bb7626292321f94062549a5bf55a3ac4cfa0f2be245"
+    if Hardware::CPU.arm?
+      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.54/outblocks-0.1.54-darwin_arm64.tar.gz"
+      sha256 "9589055b156c84d3acdcf1c64180ddaa22076dfed93bbc7cee665c89c8740745"
 
       def install
         bin.install "ok"
@@ -42,24 +42,9 @@ class Ok < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.53/outblocks-0.1.53-linux_armv6.tar.gz"
-      sha256 "5a614b50e095ae819633b52b25ba14e2e198c96474537a253de05803773baebc"
-
-      def install
-        bin.install "ok"
-        output = Utils.popen_read("#{bin}/ok completion bash")
-        (bash_completion/"ok").write output
-        output = Utils.popen_read("#{bin}/ok completion zsh")
-        (zsh_completion/"_ok").write output
-        output = Utils.popen_read("#{bin}/ok completion fish")
-        (fish_completion/"ok.fish").write output
-        prefix.install_metafiles
-      end
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.53/outblocks-0.1.53-linux_arm64.tar.gz"
-      sha256 "8029dcb896fcab80a225f294caac846a755a8f403dbb67730aa1953eb882bdf9"
+      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.54/outblocks-0.1.54-linux_arm64.tar.gz"
+      sha256 "df8c94f0e7499e75dcfa18b0fc2945c467f2ac1cffad09fee26188e04e70ca4d"
 
       def install
         bin.install "ok"
@@ -73,8 +58,23 @@ class Ok < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.53/outblocks-0.1.53-linux_amd64.tar.gz"
-      sha256 "5689031843f7acb92b60ac538c200a8a52a9ea3b84f3de6f6f4ecfcd1192677a"
+      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.54/outblocks-0.1.54-linux_amd64.tar.gz"
+      sha256 "7594a0b14b601bdc6be9699ff42f7278add10c3671eb8e7867859b29b74f8c9e"
+
+      def install
+        bin.install "ok"
+        output = Utils.popen_read("#{bin}/ok completion bash")
+        (bash_completion/"ok").write output
+        output = Utils.popen_read("#{bin}/ok completion zsh")
+        (zsh_completion/"_ok").write output
+        output = Utils.popen_read("#{bin}/ok completion fish")
+        (fish_completion/"ok.fish").write output
+        prefix.install_metafiles
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.54/outblocks-0.1.54-linux_armv6.tar.gz"
+      sha256 "83b4d40a052b59a0789459726457f2a26c23d8c3f09efaa7b018198917869dba"
 
       def install
         bin.install "ok"
