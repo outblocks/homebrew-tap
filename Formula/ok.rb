@@ -5,13 +5,13 @@
 class Ok < Formula
   desc "Auto devops."
   homepage "https://outblocks.io"
-  version "0.1.96"
+  version "0.1.97"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.96/outblocks-0.1.96-darwin_arm64.tar.gz"
-      sha256 "e2caa4bb276690f0bb115319295ed9ea9f2444711ff2ab922c50795479c73342"
+      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.97/outblocks-0.1.97-darwin_arm64.tar.gz"
+      sha256 "96db154f979a819387ae4866a33913a2f6781b13a7bb8d10813f487c696d524e"
 
       def install
         bin.install "ok"
@@ -25,8 +25,8 @@ class Ok < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.96/outblocks-0.1.96-darwin_amd64.tar.gz"
-      sha256 "e8861794e7723ac04c97a85ce552e77cf481930f56170745a96cb2722304a742"
+      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.97/outblocks-0.1.97-darwin_amd64.tar.gz"
+      sha256 "cccb614a3dd4688892b88878c49b1a92f414b87e5a4983c840d1c7eadc89e4e7"
 
       def install
         bin.install "ok"
@@ -42,9 +42,9 @@ class Ok < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.96/outblocks-0.1.96-linux_amd64.tar.gz"
-      sha256 "15e041aec199778f577dd9764fd9c6300c2a8f2489c405ad803a6528c4f0f41a"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.97/outblocks-0.1.97-linux_arm64.tar.gz"
+      sha256 "da0694b47857e952e12ecf20cae48324abc067855b4486b071cdc314bfb394c6"
 
       def install
         bin.install "ok"
@@ -58,8 +58,8 @@ class Ok < Formula
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.96/outblocks-0.1.96-linux_armv6.tar.gz"
-      sha256 "a111e3bb080c4231a286df4c6b0b2f46796dd50e9d6882916404b933db02b062"
+      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.97/outblocks-0.1.97-linux_armv6.tar.gz"
+      sha256 "1a95c114fbf06d71c6caa57a9513afe1bef0c7665fa4e402e2625e61c598969a"
 
       def install
         bin.install "ok"
@@ -72,9 +72,9 @@ class Ok < Formula
         prefix.install_metafiles
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.96/outblocks-0.1.96-linux_arm64.tar.gz"
-      sha256 "50efbdf6190c02a1e824cb346ed99cbcb0206556cbeffee10939415d50a172f4"
+    if Hardware::CPU.intel?
+      url "https://github.com/outblocks/outblocks-cli/releases/download/v0.1.97/outblocks-0.1.97-linux_amd64.tar.gz"
+      sha256 "23b437ee5cdd74e536dfb9a6cc7e625b6ac90a0968c343c0ac4267ec76628e79"
 
       def install
         bin.install "ok"
